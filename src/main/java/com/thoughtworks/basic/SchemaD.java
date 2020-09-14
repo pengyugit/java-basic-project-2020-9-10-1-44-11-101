@@ -4,12 +4,12 @@ public class SchemaD extends Schema {
     String order = "d";
     String value = "";
 
-    public SchemaD(String order,String value){
+    public SchemaD(String order,String value) throws Exception {
         super(order,value);
         try {
-            this.value = value;
+            String.valueOf(value);
         }catch (Exception e){
-            e.printStackTrace();
+            throw new Exception("d的value类型为string");
         }
     }
 

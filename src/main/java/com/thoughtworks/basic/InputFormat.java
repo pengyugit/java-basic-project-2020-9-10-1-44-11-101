@@ -1,9 +1,6 @@
 package com.thoughtworks.basic;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class InputFormat {
@@ -12,4 +9,23 @@ public class InputFormat {
                 .filter(p->p.length()!=0)
                 .collect(Collectors.toList());
     }
+
+    public List<List<String>> parseInput(List<String> inputOrders){
+        List<List<String>> parseInputs = new ArrayList<>();
+        for(String inputOrder: inputOrders ){
+            parseInputs.add(Arrays.asList(inputOrder.split(" ")));
+        }
+        return parseInputs;
+    }
+
+    public Boolean checkInput( List<String> inputOrderList){
+        if(inputOrderList.size()!=2){
+            return false;
+        }
+        if(inputOrderList.get(1).contains("-")){
+            return false;
+        }
+        return true;
+    }
+
 }

@@ -4,12 +4,12 @@ public class SchemaP extends Schema {
     String order = "P";
     int value = 0;
 
-    public SchemaP(String order,String value){
+    public SchemaP(String order,String value)throws Exception {
         super(order,value);
         try {
-            this.value = Integer.parseInt(value);
+            Integer.parseInt(value);
         }catch (Exception e){
-            e.printStackTrace();
+            throw new Exception("p的value类型为整数");
         }
 
     }

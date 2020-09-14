@@ -2,7 +2,7 @@ package com.thoughtworks.basic;
 
 public abstract class Schema {
     private String order;
-    private Object value;
+    private String value;
 
     public Schema(String order, String value) {
         this.order = order;
