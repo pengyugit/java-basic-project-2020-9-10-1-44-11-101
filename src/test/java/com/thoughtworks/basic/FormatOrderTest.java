@@ -60,7 +60,7 @@ public class FormatOrderTest {
             String value = parseInput.get(1);
 
             Class schemaClass = Class.forName("com.thoughtworks.basic.Schema"+order.toUpperCase());
-            Schema schema = (Schema)schemaClass.getConstructor(String.class,String.class).newInstance(order,value);
+            Schema schema = (Schema)schemaClass.getConstructor(String.class,Object.class).newInstance(order,value);
             schemas.add(schema);
         }
 

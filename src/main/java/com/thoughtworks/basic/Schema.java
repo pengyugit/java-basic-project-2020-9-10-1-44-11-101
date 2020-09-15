@@ -2,9 +2,9 @@ package com.thoughtworks.basic;
 
 public abstract class Schema {
     private String order;
-    private String value;
+    private Object value;
 
-    public Schema(String order, String value) {
+    public Schema(String order, Object value) {
         this.order = order;
         this.value = value;
     }

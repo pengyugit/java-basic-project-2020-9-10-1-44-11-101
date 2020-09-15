@@ -3,7 +3,7 @@ package com.thoughtworks.basic;
 public class SchemaD extends Schema {
     private String value;
 
-    public SchemaD(String order,String value) throws Exception {
+    public SchemaD(String order,Object value) throws Exception {
         super(order,value);
         try {
             this.value = String.valueOf(value);
