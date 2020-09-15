@@ -13,14 +13,13 @@ import static org.junit.Assert.assertEquals;
 public class FormatOrderTest {
 
     @Test
-    public void should_return_inputStr_when_console_input() {
+    public void should_return_inputStrArray_when_console_input() {
         InputFormat inputFormat = new InputFormat();
         String consoleInput = "-l true -p 8080 -d /usr/logs";
 
         List<String> inputOrders = inputFormat.input(consoleInput);
 
-
-        assertEquals("[l true , p 8080 , d /usr/logs]",inputOrders.toString());
+        assertEquals(Arrays.asList("l true ","p 8080 ","d /usr/logs"),inputOrders);
     }
 
     @Test
@@ -65,11 +64,16 @@ public class FormatOrderTest {
             schemas.add(schema);
         }
 
-        assertEquals("(\"l\",true)",schemas.get(0).toString());
-        assertEquals("(\"p\",8080)",schemas.get(1).toString());
-        assertEquals("(\"d\",/usr/logs)",schemas.get(2).toString());
+        assertEquals("Arg(\"l\",true)",schemas.get(0).toString());
+        assertEquals("Arg(\"p\",8080)",schemas.get(1).toString());
+        assertEquals("Arg(\"d\",/usr/logs)",schemas.get(2).toString());
     }
 
+
+//    @Test
+//    public void should_return_arg() throws Exception {
+//
+//    }
 
 
 }
